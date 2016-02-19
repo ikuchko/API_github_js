@@ -22,6 +22,10 @@ var lib = require('bower-files')({
   }
 });
 
+gulp.task('json', function() {
+  return gulp.src("./*-response.json")
+    .pipe(gulp.dest("./build"));
+});
 
 gulp.task('jshint', function(){
   return gulp.src(['js/*.js'])
@@ -60,6 +64,7 @@ gulp.task("build", ['clean'], function(){
   }
   gulp.start('bower');
   gulp.start('cssBuild');
+  gulp.start('json');
 });
 
 gulp.task('jsBower', function () {
