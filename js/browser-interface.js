@@ -15,7 +15,16 @@ $(function() {
       $('#followers').text(response.followers);
       $('#starred').text(response.public_gists);
       $('#following').text(response.following);
-      $('#repo-list').append("")
+      $.get("./../repos-response.json", function (resp) {
+        for (var i=0; i<resp.length; i++) {
+          $('#repo-list').append("<div>")
+                         .append("<p><strong>" + resp[i].name + "</strong></p>")
+                         .append("<p>" + resp[i].description + "</p>")
+                         .append("<p>" + date.formatUpdated(resp[i].updated_at) + "</p>")
+                         .append("</div>");
+
+        }
+      });
     });
   });
 });

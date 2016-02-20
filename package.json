@@ -8,7 +8,9 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "moment": "^2.11.2"
+  },
   "devDependencies": {
     "bower-files": "^3.11.3",
     "browser-sync": "^2.11.1",
