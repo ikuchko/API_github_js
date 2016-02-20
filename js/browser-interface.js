@@ -1,4 +1,4 @@
-var date = require("./../js/scripts.js");
+var script = require("./../js/scripts.js");
 
 $(function() {
   $("#btn-test").click(function () {
@@ -11,16 +11,17 @@ $(function() {
       $('#user-email').text(response.email);
       $('#user-blog').text(response.blog);
       $('#user-location').text(response.location);
-      $('#joined-date').text(date.formatDate(response.created_at));
+      $('#joined-date').text(script.formatDate(response.created_at));
       $('#followers').text(response.followers);
       $('#starred').text(response.public_gists);
       $('#following').text(response.following);
       $.get("./../repos-response.json", function (resp) {
+        resp = script.sortByName(resp);
         for (var i=0; i<resp.length; i++) {
           $('#repo-list').append("<div>")
                          .append("<p><strong>" + resp[i].name + "</strong></p>")
                          .append("<p>" + resp[i].description + "</p>")
-                         .append("<p>" + date.formatUpdated(resp[i].updated_at) + "</p>")
+                         .append("<p>" + script.formatUpdated(resp[i].updated_at) + "</p>")
                          .append("</div>");
 
         }
