@@ -2,6 +2,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="build/css/vendor.css">
+    <link rel="stylesheet" href="build/css/styles.css">
     <script src="build/js/vendor.min.js"></script>
     <script type="text/javascript" src="build/js/app.js"></script>
     <title>github</title>
@@ -11,26 +12,29 @@
       <div class="header">
         <form class="form-inline">
           <input type="text" class="form-control">
-          <button type="button" id="btn-test"></button>
+          <button type="button" class="btn btn-success" id="btn-test">Test here!</button>
         </form>
       </div>
       <div class="body">
         <div class="row">
           <div class="col-md-3">
-            <img alt="avatar" />
+            <img id="avatar" alt="avatar" />
             <h2 id="user-name"></h2>
             <h4 id="user-login"></h4>
+            <h4 id="user-email"></h4>
+            <h4 id="user-blog"></h4>
+            <h4 id="user-location"></h4>
             <hr>
-            <p id="joined-date"></p>
+            <p id="joined-date">Join on </p>
             <hr>
             <div class="subscriptions">
               <p><strong id="followers"></strong><span>Followers</span></p>
-              <p><strong id="starred"></strong><span>Stareed</span></p>
+              <p><strong id="starred"></strong><span>Starred</span></p>
               <p><strong id="following"></strong><span>Following</span></p>
             </div>
           </div>
           <div class="col-md-9">
-            <ul class="repo-list"></ul>
+            <ul id="repo-list"></ul>
           </div>
         </div>
       </div>

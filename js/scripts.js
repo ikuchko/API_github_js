@@ -1,8 +1,5 @@
-exports.getUser = function (userLogin) {
-  // $.get('https://api.github.com/users/' + userLogin, function(response) {
-  //     return response;
-  //   });
-  $.get('./../user-response.json', function (response) {
-    return response;
-  });
+exports.formatDate = function (dateCreated) {
+  var monthes = ["Jan", "Feb", "Mar", "Apr", "May", "June", "july", "Aug", "Sept", "Oct", "Nov", "Dec"];
+  var date = new Date(dateCreated);
+  return ("Joined on " + monthes[date.getMonth()] + " " + date.getDate() + ", " + date.getYear());
 }
