@@ -3,9 +3,9 @@ var script = require("./../js/scripts.js");
 $(function() {
   $(".form-inline").submit(function (event) {
     event.preventDefault();
+    var userName = $('#search').val();
     $('#search').val("");
-  //  $.get('https://api.github.com/users/' + userLogin, function(response) {
-    $.get('./../user-response.json', function (response) {
+    $.get('https://api.github.com/users/' + userName, function(response) {
       $(".body").show();
       $('#avatar').attr('src', response.avatar_url);
       $('#user-name').text(response.name);
@@ -17,15 +17,15 @@ $(function() {
       $('#followers').text(response.followers);
       $('#starred').text(response.public_gists);
       $('#following').text(response.following);
-      $.get("./../repos-response.json", function (resp) {
+      $.get("https://api.github.com/users/" + userName + "/repos", function (resp) {
+        $(".repositories").remove();
         resp = script.sortByName(resp);
         for (var i=0; i<resp.length; i++) {
-          $('#repo-list').append("<div>")
-                         .append("<p><strong>" + resp[i].name + "</strong></p>")
-                         .append("<p>" + resp[i].description + "</p>")
-                         .append("<p class='grey-text'>" + script.formatUpdated(resp[i].updated_at) + "</p>")
-                         .append("</div><hr>");
-
+          $('#repo-list').append("<div class='repositories'>" +
+                                 "<p><strong>" + resp[i].name + "</strong></p>" +
+                                 "<p>" + resp[i].description + "</p>" +
+                                 "<p class='grey-text'>" + script.formatUpdated(resp[i].updated_at) + "</p>" +
+                                 "<hr></div>");
         }
       });
     });
