@@ -1,4 +1,4 @@
-# Practice of GitHub API
+# GitHub finder
 
 ##### Epicodus Fridays code review project
 
