@@ -1,7 +1,9 @@
 var script = require("./../js/scripts.js");
 
 $(function() {
-  $("#btn-test").click(function () {
+  $(".form-inline").submit(function (event) {
+    event.preventDefault();
+    $('#search').val("");
   //  $.get('https://api.github.com/users/' + userLogin, function(response) {
     $.get('./../user-response.json', function (response) {
       $(".body").show();
@@ -21,8 +23,8 @@ $(function() {
           $('#repo-list').append("<div>")
                          .append("<p><strong>" + resp[i].name + "</strong></p>")
                          .append("<p>" + resp[i].description + "</p>")
-                         .append("<p>" + script.formatUpdated(resp[i].updated_at) + "</p>")
-                         .append("</div>");
+                         .append("<p class='grey-text'>" + script.formatUpdated(resp[i].updated_at) + "</p>")
+                         .append("</div><hr>");
 
         }
       });

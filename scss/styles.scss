@@ -1,3 +1,54 @@
+$gray: #999;
+$light-gray: #EAEAEA;
+$redLine: 1px solid #AD8483;
+$brown: #982300;
+
 .body {
   display: none;
+}
+
+#avatar {
+  height: 230px;
+  width: 230px;
+  border-radius: 6px 50px;
+}
+
+.header {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.grey-text{
+  color: $gray;
+}
+
+body {
+  background-color: $light-gray;
+}
+
+hr {
+  border-top:$redLine;
+}
+
+.search {
+  width: 500px !important;
+  font-size: 22px;
+}
+
+span {
+  display: block;
+  font-size: 10px;
+}
+
+.inline {
+  width: 32.333%;
+  display: inline-block;
+  text-align: center;
+}
+
+
+strong {
+  color: $brown;
+  font-size: 23px;
+  font-weight: bold;
 }

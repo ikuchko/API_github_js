@@ -11,13 +11,12 @@
     <div class="container">
       <div class="header">
         <form class="form-inline">
-          <input type="text" class="form-control">
-          <button type="button" class="btn btn-success" id="btn-test">Test here!</button>
+          <input type="text" id="search" class="form-control search" placeholder="Search user">
         </form>
       </div>
       <div class="body">
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-3">
             <img id="avatar" alt="avatar" />
             <h2 id="user-name"></h2>
             <h4 id="user-login"></h4>
@@ -28,12 +27,14 @@
             <p id="joined-date">Join on </p>
             <hr>
             <div class="subscriptions">
-              <p><strong id="followers"></strong><span>Followers</span></p>
-              <p><strong id="starred"></strong><span>Starred</span></p>
-              <p><strong id="following"></strong><span>Following</span></p>
+              <p class="inline"><strong id="followers"></strong><span>Followers</span></p>
+              <p class="inline"><strong id="starred"></strong><span>Starred</span></p>
+              <p class="inline"><strong id="following"></strong><span>Following</span></p>
             </div>
           </div>
-          <div class="col-md-8">
+          <div class="col-md-9">
+            <h3>Repositories</h3>
+            <hr>
             <ul id="repo-list"></ul>
           </div>
         </div>
